@@ -1,4 +1,6 @@
 package client;
+
+import io.qameta.allure.Step;
 import config.Config;
 import io.restassured.response.Response;
 import pojo.Order;
@@ -6,6 +8,7 @@ import pojo.Order;
 import static io.restassured.RestAssured.given;
 
 public class OrderClient {
+    @Step("Создание заказа")
     public Response createOrder(Order order, String token) {
 
         return given()
@@ -15,6 +18,8 @@ public class OrderClient {
                 .body(order)
                 .post(Config.ORDERS);
     }
+
+    @Step("Get user orders")
     public Response getUserOrders(String token) {
 
         return given()

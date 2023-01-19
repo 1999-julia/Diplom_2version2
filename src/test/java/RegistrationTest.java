@@ -4,6 +4,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import client.UserClient;
 import pojo.User;
+
 import static org.hamcrest.Matchers.*;
 
 public class RegistrationTest {

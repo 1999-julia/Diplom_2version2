@@ -3,7 +3,9 @@ import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import client.UserClient;
 import pojo.User;
+
 import static org.hamcrest.Matchers.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,7 +30,7 @@ public class LoginTest {
     @Description("Удачная авторизация пользака")
     public void shouldSuccessLogin() {
         response = userClient.loginUser(user = User.getExistUser());
-        response.then().assertThat().body("success", equalTo(true)).and().statusCode(200);
+        response.then().statusCode(200).assertThat().body("success", equalTo(true));
     }
 
     @Test

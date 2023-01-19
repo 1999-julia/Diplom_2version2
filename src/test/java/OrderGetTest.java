@@ -4,6 +4,7 @@ import pojo.*;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.Test;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
@@ -26,6 +27,7 @@ public class OrderGetTest {
         response.then().assertThat().body("message", equalTo("You should be authorised"))
                 .and().statusCode(401);
     }
+
     @Test
     @DisplayName("Get order login's user")
     @Description("Получить заказ от авторизованного пользователя")
